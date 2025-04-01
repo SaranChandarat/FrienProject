@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์ของคุณ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="https://i.pinimg.com/originals/1b/56/46/1b56465d64a3218b63922a2e1856968e.gif" alt="รูปภาพของคุณ">
+            <h2>Saran Company</h2>
+            <p>2025 Saran company</p>
+        </div>
+        <div class="right-section">
+            <h1>Asset & Inventory Management System</h1>
+            <p>ติดตามครุภัณฑ์และทรัพย์สินสำนักงานของบริษัทSaran</p>
+            <div class="buttons">
+                <button onclick="goToCategory('table')">โต๊ะ</button>
+                <button onclick="goToCategory('chair')">เก้าอี้</button>
+                <button onclick="goToCategory('notebook')">สมุด</button>
+                <button onclick="goToCategory('calculator')">เครื่องคิดเลข</button>
+                <button onclick="goToCategory('computer')">คอมพิวเตอร์</button>
+                <button onclick="goToCategory('paper')">กระดาษ</button>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function goToCategory(category) {
+            window.location.href = category + '.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('https://i.pinimg.com/originals/35/59/ce/3559ce9d0ac06403a6695f4c659884b5.gif'); /* เพิ่มภาพพื้นหลัง */
+    background-size: cover; /* ปรับขนาดภาพให้เต็มหน้าจอ */
+    background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังซ้ำ */
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-section {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #e6e6fa, #d8bfd8); /* สีพื้นหลังไล่ระดับ */
+}
+
+.left-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.left-section h2 {
+    margin-bottom: 10px;
+}
+
+.right-section {
+    width: 60%;
+    padding: 40px;
+    text-align: left;
+}
+
+.right-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.right-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* สีปุ่ม */
+    color: white;
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* สไตล์สำหรับหน้าเว็บหมวดหมู่ (ถ้าต้องการ) */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+/* ... โค้ด CSS อื่นๆ ... */
+
+#borrowButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* ... สไตล์ CSS อื่นๆ ... */
+
+.same-size-button {
+    padding: 12px 25px; /* กำหนด padding ให้เท่ากัน */
+    font-size: 18px; /* กำหนดขนาด font ให้เท่ากัน */
+}
