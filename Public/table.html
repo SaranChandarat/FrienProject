@@ -154,6 +154,7 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>ยืมโต๊ะ</h1>
         <p>กดปุ่มด้านล่างเพื่อทำการยืมโต๊ะ</p>
@@ -174,7 +175,7 @@
             <input type="number" id="quantity" class="input-field">
             
             <label for="borrowTime">เวลายืม</label>
-            <input type="datetime-local" id="borrowTime" class="input-field">
+            <input type="date" id="borrowTime" class="input-field">
             
             <button id="confirmBorrow" class="modal-btn">ยืนยัน</button>
         </div>
@@ -189,13 +190,12 @@
                     <tr>
                         <th>รหัสโต๊ะ</th>
                         <th>จำนวน</th>
-                        <th>เวลายืม</th>
-                        <th>การดำเนินการ</th>
+                        <th>เวลายืม</th>                      
                     </tr>
                 </thead>
-                <tbody>
-                    {/* ข้อมูลการยืมโต๊ะจะถูกเพิ่มโดย JavaScript */}
-                </tbody>
+                <tbody> 
+                    
+                </tbody> 
             </table>
         </div>
     </div>
@@ -211,15 +211,15 @@
             <input type="number" id="editQuantity" class="input-field">
             
             <label for="editBorrowTime">เวลายืม</label>
-            <input type="datetime-local" id="editBorrowTime" class="input-field">
+            <input type="date" id="editBorrowTime" class="input-field">
             
             <button id="saveEditButton" class="modal-btn">บันทึก</button>
         </div>
     </div>
 
+    
+
     <div id="alertBox" class="alert-box"></div>
-    <script src="scrips.js">
-    </script>
     <script>
         var modal = document.getElementById("borrowModal");
         var btn = document.getElementById("borrowButton");
@@ -272,6 +272,11 @@
         var closeEditData = document.getElementsByClassName("close-edit-data")[0];
         var saveDataBtn = document.getElementById("saveEditButton");
         var selectedRow;
+
+        
+        var data = [
+           
+        ];
 
         viewDataBtn.onclick = function() {
             // ล้างข้อมูลในตาราง
@@ -332,5 +337,7 @@
             viewDataModal.style.display = "flex";
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

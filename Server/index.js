@@ -35,6 +35,15 @@ const validateData = (userData) => {
     return errors;
 };
 
+const validateData2 = (userData) => {
+    let errors = [];
+    if (!userData.IDChair) errors.push('กรุณาใส่ไอดีเก้าอี้');
+    if (!userData.Number) errors.push('กรุณาใส่จำนวนโต๊ะ');
+    if (!userData.Date ) errors.push('กรุณาใส่วันที่');
+    
+    return errors;
+};
+
 app.get('/Bleta', async (req, res) => {
     try {
         const [results] = await conn.query('SELECT * FROM Bleta');
@@ -98,6 +107,25 @@ app.get('/Chairs', async (req, res) => {
     try {
         const [results] = await conn.query('SELECT * FROM Chairs');
         res.json(results);
+    } catch (error) {
+        res.status(500).json({ message: 'เกิดข้อผิดพลาด', errorMessage: error.message });
+    }
+});
+
+app.post('/Chairs', async (req, res) => {
+    try {
+        if (!conn) return res.status(500).json({ message: 'Database ยังไม่ได้เชื่อมต่อ' });
+
+        let user = req.body;
+        const errors = validateData2(user);
+        if (errors.length > 0) return res.status(400).json({ message: 'ข้อมูลไม่ครบถ้วน', errors });
+        
+        const [results] = await conn.query(
+            'INSERT INTO Chairs set ?' 
+            ,user
+        );
+
+        res.status(201).json({ message: 'สร้างผู้ใช้สำเร็จ', userId: results.insertId });
     } catch (error) {
         res.status(500).json({ message: 'เกิดข้อผิดพลาด', errorMessage: error.message });
     }

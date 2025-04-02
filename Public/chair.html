@@ -174,7 +174,7 @@
             <input type="number" id="quantity" class="input-field">
             
             <label for="borrowTime">เวลายืม</label>
-            <input type="datetime-local" id="borrowTime" class="input-field">
+            <input type="date" id="borrowTime" class="input-field">
             
             <button id="confirmBorrow" class="modal-btn">ยืนยัน</button>
         </div>
@@ -190,11 +190,10 @@
                         <th>รหัสเก้าอี้</th>
                         <th>จำนวน</th>
                         <th>เวลายืม</th>
-                        <th>การดำเนินการ</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* ข้อมูลการยืมเก้าอี้จะถูกเพิ่มโดย JavaScript */}
+                    
                 </tbody>
             </table>
         </div>
@@ -211,13 +210,15 @@
             <input type="number" id="editQuantity" class="input-field">
             
             <label for="editBorrowTime">เวลายืม</label>
-            <input type="datetime-local" id="editBorrowTime" class="input-field">
+            <input type="date" id="editBorrowTime" class="input-field">
             
             <button id="saveEditButton" class="modal-btn">บันทึก</button>
         </div>
     </div>
 
     <div id="alertBox" class="alert-box"></div>
+
+    <script src="script2.js"></script>
 
     <script>
         var modal = document.getElementById("borrowModal");
@@ -338,5 +339,6 @@
             viewDataModal.style.display = "flex";
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
